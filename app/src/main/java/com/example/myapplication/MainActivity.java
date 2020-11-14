@@ -1,8 +1,12 @@
 package com.example.myapplication;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -10,35 +14,42 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView textView1;
-
     private Button btnLogin;
-
+    private EditText edtUsername;
+    private EditText edtPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login_page);
 
-        initView();
+//        Intent i = new Intent(MainActivity.this,SplashActivity.class);
+
+
+        btnLogin = findViewById(R.id.btn_submit);
+        edtUsername = findViewById(R.id.edit_username);
+        edtPassword = findViewById(R.id.edit_password);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView1.setText("dear friend \n i love you more daily.i wish you could see yourself \n  the way i see you and i wish you could love yourself \n the way i love you .and above all , i wish your life is \n everything you deserve because ,in my opinion , you \n deserve the world . i will stand by you forever . my\n heart will always belong to you .");
-                btnLogin.setText("i wish you have a good day ");
+                String username = edtUsername.getText().toString().toLowerCase().trim();
+                String password = edtPassword.getText().toString().toLowerCase().trim();
+
+                if (username.equals("") || password.equals("")) {
+                    Toast.makeText(MainActivity.this, "Username or Password are empty", Toast.LENGTH_LONG).show();
+                        if (username.equals("setayesh")&& password.equals(0)){
+                            Toast.makeText(MainActivity.this, "password is wrong", Toast.LENGTH_LONG).show();
+                        }
+                } else {
+                    if (username.equals("setayesh") && password.equals(1234)) {
+                        Intent i = new Intent(MainActivity.this,AdvertisementActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                }
+
             }
         });
-
-
-        Toast.makeText(this,"welcome to my first app dear",Toast.LENGTH_LONG).show();
-
-
-    }
-    private  void initView(){
-
-        textView1= findViewById(R.id.txt_first);
-
-        btnLogin= findViewById(R.id.btn_login);
     }
 }
