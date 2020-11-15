@@ -11,29 +11,43 @@
         android:id="@+id/edit_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="148dp"
         android:ems="10"
         android:hint="User Name"
         android:inputType="textPersonName"
-        android:textColor="#FFFCFC"
+        android:shadowColor="#9C27B0"
+        android:textColor="#3E3535"
+        android:textColorHint="#8D252222"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="209dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="28dp"
+        android:layout_marginRight="15dp"
+        android:background="@android:color/transparent"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName|textPassword"
-        android:textColor="#FFFFFF"
+        android:hint="password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_username" />
+        app:layout_constraintTop_toBottomOf="@id/edit_username"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="numberPassword"
+            android:shadowColor="#FFFFFF" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_submit"
@@ -46,7 +60,6 @@
         app:layout_constraintStart_toStartOf="@+id/edit_password"
         app:layout_constraintTop_toBottomOf="@+id/edit_password"
         app:rippleColor="#9A6E6E" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
