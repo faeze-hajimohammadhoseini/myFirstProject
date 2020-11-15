@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if (username.equals("") || password.equals("")) {
                     Toast.makeText(MainActivity.this, "Username or Password are empty", Toast.LENGTH_LONG).show();
-                        if (username.equals("setayesh")&& password.equals(0)){
+                        if (username.equals("setayesh")&& password.equals(false)){
                             Toast.makeText(MainActivity.this, "password is wrong", Toast.LENGTH_LONG).show();
                         }
                 } else {
-                    if (username.equals("setayesh") && password.equals(1234)) {
+                    if (username.equals("setayesh") && password.equals("1234")) {
                         Intent i = new Intent(MainActivity.this,AdvertisementActivity.class);
                         startActivity(i);
                         finish();
