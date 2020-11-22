@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(7000);
+                    Thread.sleep(2000);
                     Intent i=new Intent(SplashActivity.this,MainActivity.class);
                     startActivity(i);
                 } catch (InterruptedException e) {

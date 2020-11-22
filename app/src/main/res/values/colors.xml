@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_500">#3A66E6</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
@@ -10,8 +10,8 @@
     <color name="pink">#F4A9C3</color>
     <color name="pink_main">#D2B4DE </color>
 
-    <color name="dark_blue">#3023AE</color>
-    <color name="purple">#c86dd7</color>
+    <color name="dark_blue">#7368EC</color>
+    <color name="purple">#F4A9C3</color>
 
     <color name="login_form_details">#ccffffff</color>
     <color name="login_form_details_light">#1affffff</color>
