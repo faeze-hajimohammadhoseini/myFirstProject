@@ -8,11 +8,11 @@
     tools:context=".LoginPageActivity">
 
     <Button
-        android:id="@+id/btn_submit"
+        android:id="@+id/btn_Login"
         android:layout_width="257dp"
         android:layout_height="47dp"
         android:layout_marginTop="224dp"
-        android:text="LOGIN"
+        android:text="@string/login"
         app:layout_constraintEnd_toEndOf="@+id/edit_password"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="@+id/edit_password"
@@ -20,27 +20,27 @@
         app:rippleColor="#9A6E6E" />
 
     <TextView
-        android:id="@+id/checkLowerCase"
-        android:layout_width="212dp"
-        android:layout_height="21dp"
+        android:id="@+id/txt_Lowercase_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="use lower character "
         android:textColor="#982B2B"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkUpperCase" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Uppercase_error"
+        tools:text="TextView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_password"
         android:layout_width="207dp"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="12dp"
         android:layout_marginRight="15dp"
         android:background="@android:color/transparent"
-        android:hint="password"
+        android:hint="@string/password"
         android:paddingTop="8dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,36 +54,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             app:layout_constraintTop_toBottomOf="@id/edit_username" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/checkNumber"
-        android:layout_width="210dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="20dp"
-        android:text="your password is too short"
+        android:id="@+id/txt_Length_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:textColor="#982B2B"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_password" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_password"
+        tools:text="TextView" />
 
     <TextView
-        android:id="@+id/checkUpperCase"
-        android:layout_width="212dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="12dp"
-        android:text="use upper character"
+        android:id="@+id/txt_Uppercase_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:textColor="#982B2B"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Length_error"
+        tools:text="TextView" />
 
     <EditText
         android:id="@+id/edit_username"
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="148dp"
         android:ems="10"
-        android:hint="User Name"
+        android:hint="@string/user_name"
         android:inputType="textPersonName"
         android:shadowColor="#9C27B0"
         android:textColor="#151515"
