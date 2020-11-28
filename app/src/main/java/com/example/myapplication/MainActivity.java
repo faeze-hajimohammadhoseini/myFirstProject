@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private String username;
     private String password;
 
+    private TextView goToSignUp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
         sharedPref = new ApplicationSharedPref(this);
         initView();
+
+
+        btnLogin=findViewById(R.id.btn_Login);
+        goToSignUp=findViewById(R.id.txt_signUp);
+        chRememberMe=findViewById(R.id.ch_remember_me);
+
+        goToSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(i);
+
+            }
+        });
+
 
         chRememberMe.setChecked(sharedPref.getRememberME());
 
@@ -52,15 +69,13 @@ public class MainActivity extends AppCompatActivity {
          @Override
          public void onClick(View v) {
 
-
           txtLengthError.setVisibility(View.GONE);
           txtLowercaseError.setVisibility(View.GONE);
           txtUppercaseError.setVisibility(View.GONE);
 
           username = edtUsername.getText().toString().trim();
           password = edtPassword.getEditText().getText().toString().trim();
-
-          checkUsernameAndPassword(username, password);
+          checkUsernameAndPassword(username,password);
           sharedPref.setRememberMe(chRememberMe.isChecked());
 
           if (chRememberMe.isChecked()) {
@@ -74,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void checkUsernameAndPassword(String username, String password) {
+    public void checkUsernameAndPassword(String username, String password) {
 
         if (username.equals("setayesh") && password.equals("1234Setayesh")) {
             Intent i = new Intent(MainActivity.this, AdvertisementActivity.class);

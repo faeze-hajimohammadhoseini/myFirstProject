@@ -5,28 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Map;
 
 public class LoginPageActivity extends AppCompatActivity {
 
-private TextView goToSignUp;
+//private TextView goToSignUp;
+//
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        goToSignUp=findViewById(R.id.txt_signUp);
-
-
-        goToSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LoginPageActivity.this, SignUpActivity.class);
-                startActivity(i);
-
-            }
-        });
+//        goToSignUp=findViewById(R.id.txt_signUp);
+//
+//                goToSignUp.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Intent i = new Intent(LoginPageActivity.this, SignUpActivity.class);
+//                        startActivity(i);
+//
+//                    }
+//                });
+            }}
 
 
 //        new Thread(new Runnable() {
@@ -41,5 +47,3 @@ private TextView goToSignUp;
 //                }
 //            }
 //        }).start();
-    }
-}
