@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private String password;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,28 +48,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        btnLogin.setOnClickListener((v) -> {
-
-            txtLengthError.setVisibility(View.GONE);
-            txtLowercaseError.setVisibility(View.GONE);
-            txtUppercaseError.setVisibility(View.GONE);
-
-            username = edtUsername.getText().toString().trim();
-            password = edtPassword.getEditText().getText().toString().trim();
-
-            checkUsernameAndPassword(username, password);
-            sharedPref.setRememberMe(chRememberMe.isChecked());
-
-            if (chRememberMe.isChecked()) {
-                sharedPref.saveUsernameAndPassword(username, password);
-            } else {
-                sharedPref.clearUserInfo();
-            }
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
 
 
+          txtLengthError.setVisibility(View.GONE);
+          txtLowercaseError.setVisibility(View.GONE);
+          txtUppercaseError.setVisibility(View.GONE);
+
+          username = edtUsername.getText().toString().trim();
+          password = edtPassword.getEditText().getText().toString().trim();
+
+          checkUsernameAndPassword(username, password);
+          sharedPref.setRememberMe(chRememberMe.isChecked());
+
+          if (chRememberMe.isChecked()) {
+              sharedPref.saveUsernameAndPassword(username, password);
+          } else {
+              sharedPref.clearUserInfo();
+          }
+
+         }
         });
-
-
     }
 
 

@@ -11,19 +11,17 @@ import java.util.List;
 
 public class AdvertisementActivity extends AppCompatActivity {
 
-    private RecyclerView rcUsers;
-    private UserRecyclerAdapter userAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advertisement);
 
-        userAdapter = new UserRecyclerAdapter();
-        userAdapter.setUsers(DataProvider.getUsers(10));
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rc_users);
+        UserRecyclerAdapter userRecyclerAdapter = new UserRecyclerAdapter(this, DataProvider.getUsers(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(userRecyclerAdapter);
 
-        rcUsers = findViewById(R.id.rc_users);
-        rcUsers.setAdapter(userAdapter);
-        rcUsers.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+
     }
 }
